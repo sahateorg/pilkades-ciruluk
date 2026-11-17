@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#073d7c"><title>Simulasi Pilkades Digital Desa Ciruluk</title>
+<script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="/style.css"></head>
+<body><header><div class="brand">PEMILIHAN KEPALA DESA <small>DESA CIRULUK • SIMULASI DIGITAL</small></div><button id="admin-open" class="toplink">Admin</button></header>
+<main>
+<section id="scan" class="panel">
+<h1>Selamat Datang di Simulasi Pemilihan Kepala Desa Digital Desa Ciruluk</h1><p class="subtitle">Silahkan Scan barcode anda</p>
+<div class="scanbox"><div id="reader"></div></div><p id="scan-message" class="muted center">Izinkan akses kamera untuk mulai memindai QR Code peserta.</p>
+</section>
+<section id="ballot" class="panel hide"><h1>SURAT SUARA</h1><p class="subtitle"><b>PEMILIHAN KEPALA DESA CIRULUK</b></p><div id="candidates" class="candidates"></div><p class="notice">Periksa kembali kandidat pilihan Anda sebelum konfirmasi.</p></section>
+<section id="confirm" class="panel hide"><h1>KONFIRMASI PILIHAN</h1><div id="selected-card" class="selected-card"></div><p class="question">Apakah anda yakin memilih kandidat ini?</p><div class="actions"><button id="yes" class="gold">YA</button><button id="no" class="soft">TIDAK</button></div></section>
+<section id="success" class="panel hide"><div class="success"><div class="check">✓</div><h1>Pilihan anda sudah tersimpan</h1><p>Terima Kasih</p><p class="muted">Silakan serahkan perangkat kepada petugas.</p></div></section>
+<section id="admin" class="panel hide"><div class="admin-head"><div><h1>Dashboard Admin</h1><p class="subtitle">SIMULASI PILKADES DIGITAL DESA CIRULUK</p></div><button id="admin-close" class="soft">Tutup</button></div>
+<div id="login-area"><label>Password admin<input id="admin-password" type="password" autocomplete="current-password" placeholder="Masukkan password admin"></label><button id="login">Masuk Dashboard</button><p id="admin-error" class="error"></p></div>
+<div id="dashboard" class="hide">
+<div class="stats"><div class="stat"><span>Total peserta</span><b id="total-participants">0</b></div><div class="stat"><span>Sudah memilih</span><b id="used-participants">0</b></div><div class="stat"><span>Total suara</span><b id="total-votes">0</b></div></div>
+<div class="admin-actions"><button id="refresh">Perbarui data</button><button id="toggle-voting" class="gold">Tutup simulasi</button></div>
+<h2>Hasil sementara</h2><div id="results"></div>
+<h2>Buat QR Code peserta</h2><p class="muted">Buat maksimal 100 QR dalam satu batch. Token QR hanya ditampilkan sekali setelah dibuat. Simpan/cetak lembar QR dengan aman.</p>
+<div class="batch"><label>Jumlah QR<input id="qr-count" type="number" min="1" max="100" value="100"></label><button id="generate">Buat QR Code</button></div><p id="qr-error" class="error"></p>
+<div id="qr-print" class="qr-grid"></div><button id="print" class="soft hide">Cetak QR Code</button>
+<h2>Daftar status peserta</h2><div id="participants" class="table-wrap"></div>
+</div></section>
+</main><footer>SIMULASI TAMPILAN • BUKAN SISTEM PEMUNGUTAN SUARA RESMI</footer><script src="/app.js"></script></body></html>
